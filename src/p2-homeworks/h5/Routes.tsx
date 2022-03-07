@@ -4,6 +4,7 @@ import Error404 from "./pages/Error404";
 import {Junior} from "./pages/Junior";
 import {Junior_plus} from "./pages/Junior_plus";
 import {PreJunior} from "./pages/PreJunior";
+import s from './Router.module.css'
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',

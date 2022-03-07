@@ -43,9 +43,7 @@ function HW2() {
     return (
         <div className={s.main}>
             <hr/>
-            homeworks 2
 
-            should work (должно работать)
             <div className={s.mainDivHW2}>
               <span className={s.textMain}>
                   <Affairs

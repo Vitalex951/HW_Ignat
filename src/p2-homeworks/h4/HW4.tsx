@@ -21,9 +21,8 @@ function HW4() {
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
-        <div>
+        <div className={s.container}>
             <hr/>
-            homeworks 4
 
             <div className={s.column}>
                 <SuperInputText
@@ -62,7 +61,7 @@ function HW4() {
                     checked={checked}
                     onChangeChecked={setChecked}
                 >
-                   Home Work 4 {/*// этот текст попадёт в children*/}
+                    Home Work 4 {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}

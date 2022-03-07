@@ -4,7 +4,8 @@
 
 .main {
     width: 240px;
-    min-height: 100px;
+    min-height: 65px;
+    margin: 0 auto;
 }
 
 .inputError {
@@ -28,9 +29,11 @@
     border-radius: 20px;
     width: 200px;
 }
+
 .inputName:focus {
     box-shadow: 0 0 20px rgba(37, 59, 255, 0.8);
 }
+
 .textError {
     color: red;
     font-weight: bolder;

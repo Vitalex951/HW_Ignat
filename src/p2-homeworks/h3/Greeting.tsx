@@ -20,8 +20,8 @@ const Greeting: React.FC<GreetingPropsType> = (
     //     borderRadius: "5px"
     // }
     //
-    let input = error? s.inputError: s.inputName
-    let disabled = error? true: false
+    let input = error ? s.inputError : s.inputName
+    let disabled = error ? true : false
 
     return (
         <div className={s.main}>
