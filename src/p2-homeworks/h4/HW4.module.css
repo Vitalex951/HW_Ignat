@@ -1,0 +1,16 @@
+.blue {
+    color: red;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 210px;
+    width: 200px;
+}
+
+.testSpanError {
+    color: red;
+}
+
