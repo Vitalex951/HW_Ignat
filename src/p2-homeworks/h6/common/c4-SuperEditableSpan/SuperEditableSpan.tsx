@@ -62,7 +62,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                         {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
                     />
                 ) : (<>
-                        <img src={'https://cdn-icons-png.flaticon.com/512/1647/1647897.png'}/><span
+                        <img className={s.imgspan} src={'https://cdn-icons-png.flaticon.com/512/1647/1647897.png'}/><span
                         onDoubleClick={onDoubleClickCallBack}
                         className={spanClassName}
 
