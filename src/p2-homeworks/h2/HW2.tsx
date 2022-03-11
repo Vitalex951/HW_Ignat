@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import Affairs from './Affairs'
 import s from './Affairs.module.css'
+import '../../p1-main/m1-ui/u1-app/Header.css'
 
 // types
 export type AffairPriorityType = 'high' | 'middle' | 'low'// need to fix any
 export type AffairType = {
-    _id: number,
-    name: string,
-    priority: string
+    _id: number
+    name: string
+    priority: FilterType
 }
 export type FilterType = 'all' | AffairPriorityType
 
@@ -41,10 +42,17 @@ function HW2() {
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
-        <div className={s.main}>
-            <hr/>
 
-            <div className={s.mainDivHW2}>
+        <div>
+            <hr/>
+            <div className={s.main}>
+
+                <div className='containerheader'>
+                    <h1>
+                        Homeworks 2
+                    </h1>
+                </div>
+                <div className={s.mainDivHW2}>
               <span className={s.textMain}>
                   <Affairs
                       data={filteredAffairs}
@@ -53,11 +61,8 @@ function HW2() {
                       filter={filter}
                   />
               </span>
+                </div>
             </div>
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeAffairs/>*/}
-            <hr/>
         </div>
     )
 }

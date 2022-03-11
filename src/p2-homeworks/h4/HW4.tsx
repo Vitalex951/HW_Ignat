@@ -22,9 +22,13 @@ function HW4() {
 
     return (
         <div className={s.container}>
-            <hr/>
-
+            <div className='containerheader'>
+                <h1>
+                    Homeworks 4
+                </h1>
+            </div>
             <div className={s.column}>
+
                 <SuperInputText
                     value={text}
                     onChangeText={setText}
@@ -67,13 +71,6 @@ function HW4() {
                 {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange}/>
             </div>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeSuperInputText/>*/}
-            {/*<AlternativeSuperButton/>*/}
-            {/*<AlternativeSuperCheckbox/>*/}
-            <hr/>
         </div>
     )
 }
