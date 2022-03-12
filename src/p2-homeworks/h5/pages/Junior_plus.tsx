@@ -1,13 +1,12 @@
 import React from 'react'
-import HW1 from '../../h1/HW1'
-import HW2 from '../../h2/HW2'
-import HW3 from '../../h3/HW3'
-import HW4 from '../../h4/HW4'
+import '../../../p1-main/m1-ui/u1-app/Header.css'
 
 export function Junior_plus() {
     return (
-        <div>
-
-        </div>
+            <div className='containerheader'>
+                <h1>
+                    Junior+
+                </h1>
+            </div>
     )
 }
