@@ -14,7 +14,7 @@ function HW6() {
     }
     const restore = () => {
 
-        setValue(restoreState('editable-span-value', value))
+        setValue(restoreState<string>('editable-span-value', value))
     }
 
     return (
