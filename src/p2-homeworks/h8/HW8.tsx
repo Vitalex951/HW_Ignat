@@ -1,8 +1,13 @@
 import React, {useState} from 'react'
-import {homeWorkReducer} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
+import s from './HW8.module.css'
+import {check18AC, homeWorkReducer, sortDownAC, sortUpAC} from "./bll/homeWorkReducer";
 
-// export type UserType =
+export type UserType = {
+    _id: number
+    name: string
+    age: number
+}
 
 const initialPeople = [
     {_id: 0, name: 'Кот', age: 3},
@@ -14,33 +19,37 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<UserType[]>(initialPeople)
 
-    // need to fix any
-    const finalPeople = people.map((p: any) => (
-        <div key={p._id}>
-            some name, age
+    const finalPeople = people.map((p: UserType) => (
+        <div className={s.text} key={p._id}>
+            <div>{p.name}</div>
+            <div>{p.age}</div>
         </div>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
-
+    const sortUp = () => setPeople(homeWorkReducer(initialPeople, sortUpAC()))
+    const sortDown = () => setPeople(homeWorkReducer(initialPeople, sortDownAC()))
+    const check18 = () => setPeople(homeWorkReducer(initialPeople, check18AC()))
     return (
         <div>
             <hr/>
-            homeworks 8
+            <div className='containerheader'>
+                <h1>
+                    Homeworks 8
+                </h1>
+            </div>
+            <div className={s.container}>
 
-            {/*should work (должно работать)*/}
-            {finalPeople}
+                {finalPeople}
 
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
+                <div className={s.buttons}>
+                    <div><SuperButton onClick={sortUp}>Sort up</SuperButton></div>
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativePeople/>*/}
-            <hr/>
+                    <div><SuperButton onClick={sortDown}>Sort Down</SuperButton></div>
+                    <div><SuperButton onClick={check18}>Check 18+</SuperButton></div>
+                </div>
+            </div>
         </div>
     )
 }

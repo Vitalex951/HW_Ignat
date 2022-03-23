@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
 .main {
     max-width: 270px;
     margin: 0 auto;
@@ -8,10 +8,14 @@
     justify-content: center;
     padding: 10px;
     background-color: rgba(255, 249, 245, 0.3);
+
+
 }
 
 .text {
+    font-family: 'Caveat', cursive;
     display: inline-block;
     margin: 0 10px 0 0;
-    font-size: 20px;
+    font-size: 28px;
+    text-decoration: underline;
 }
