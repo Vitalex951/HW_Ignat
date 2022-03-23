@@ -1,5 +1,5 @@
 import React from 'react'
-import {check18AC, homeWorkReducer, sortDownAC, sortUpAC} from '../homeWorkReducer'
+import {checkAC, homeWorkReducer, sortDownAC, sortUpAC} from '../homeWorkReducer'
 import {UserType} from "../../HW8";
 
 let initialState: UserType[]
@@ -38,7 +38,7 @@ test('sort name down', () => {
 })
 
 test('check age 18', () => {
-    const newState = homeWorkReducer(initialState, check18AC())
+    const newState = homeWorkReducer(initialState, checkAC(18))
 
     expect(newState[0].name).toBe('Александр')
     expect(newState[1].name).toBe('Виктор')

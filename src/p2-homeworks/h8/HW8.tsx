@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import s from './HW8.module.css'
-import {check18AC, homeWorkReducer, sortDownAC, sortUpAC} from "./bll/homeWorkReducer";
+import {checkAC, homeWorkReducer, sortDownAC, sortUpAC} from "./bll/homeWorkReducer";
 
 export type UserType = {
     _id: number
@@ -21,7 +21,7 @@ const initialPeople = [
 function HW8() {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
 
-    const finalPeople = people.map((p: UserType) => (
+    const finalPeople = people.map((p:   UserType) => (
         <div className={s.text} key={p._id}>
             <div>{p.name}</div>
             <div>{p.age}</div>
@@ -30,7 +30,7 @@ function HW8() {
 
     const sortUp = () => setPeople(homeWorkReducer(initialPeople, sortUpAC()))
     const sortDown = () => setPeople(homeWorkReducer(initialPeople, sortDownAC()))
-    const check18 = () => setPeople(homeWorkReducer(initialPeople, check18AC()))
+    const check18 = () => setPeople(homeWorkReducer(initialPeople, checkAC(18)))
     return (
         <div>
             <hr/>

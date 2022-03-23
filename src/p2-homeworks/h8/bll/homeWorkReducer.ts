@@ -8,8 +8,8 @@ export const homeWorkReducer = (state: UserType[], action: homeWorkReducerType):
         case "SORT-DOWN": {
             return [...state].sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? -1 : 1)
         }
-        case "CHECK18": {
-            return [...state].filter(el => el.age >=18)
+        case "CHECK": {
+            return [...state].filter(el => el.age >= action.payload.age)
         }
         default:
             return state
@@ -19,7 +19,7 @@ type homeWorkReducerType = sortACType | sortDownACType | check18ACType
 
 type sortACType = ReturnType<typeof sortUpAC>
 type sortDownACType = ReturnType<typeof sortDownAC>
-type check18ACType = ReturnType<typeof check18AC>
+type check18ACType = ReturnType<typeof checkAC>
 
 export const sortUpAC = () => {
     return {
@@ -33,8 +33,9 @@ export const sortDownAC = () => {
     } as const
 }
 
-export const check18AC = () => {
+export const checkAC = (age: number) => {
     return {
-        type: 'CHECK18'
+        type: 'CHECK',
+        payload: {age}
     } as const
 }
