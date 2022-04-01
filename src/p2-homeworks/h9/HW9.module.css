@@ -1,0 +1,32 @@
+
+.main {
+    min-width: 150px;
+    min-height: 80px;
+    display: flex;
+    justify-content: right;
+    margin: 5px 100px;
+}
+.container {
+    position: fixed;
+    max-width: 250px;
+    min-height: 50px;
+}
+
+
+.timeDate {
+    font-weight: 700;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 80px;
+    flex: 1 1 auto;
+    background-color: #2F4F4F;
+    color: #00FF7F;
+    border: 6px outset #7a8fed;
+    padding: 5px 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}

@@ -21,7 +21,7 @@ const initialPeople = [
 function HW8() {
     const [people, setPeople] = useState<UserType[]>(initialPeople)
 
-    const finalPeople = people.map((p:   UserType) => (
+    const finalPeople = people.map((p: UserType) => (
         <div className={s.text} key={p._id}>
             <div>{p.name}</div>
             <div>{p.age}</div>
@@ -41,11 +41,11 @@ function HW8() {
             </div>
             <div className={s.container}>
 
-                {finalPeople}
+
+                <div className={s.peoples}>{finalPeople}</div>
 
                 <div className={s.buttons}>
                     <div><SuperButton onClick={sortUp}>Sort up</SuperButton></div>
-
                     <div><SuperButton onClick={sortDown}>Sort Down</SuperButton></div>
                     <div><SuperButton onClick={check18}>Check 18+</SuperButton></div>
                 </div>
