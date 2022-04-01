@@ -11,6 +11,7 @@ function Clock() {
     const stop = () => {
         clearInterval(timerId)
     }
+
     const start = () => {
         stop()
         const id: number = window.setInterval(() => {
@@ -44,10 +45,8 @@ function Clock() {
                         {stringDate}
                     </div>
                 )}</div>
-
             <div className={s.buttons}><SuperButton onClick={start}>start</SuperButton>
                 <SuperButton onClick={stop}>stop</SuperButton></div>
-
         </div>
     )
 }
