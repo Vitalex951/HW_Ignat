@@ -3,10 +3,9 @@ import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import moment from 'moment'
 import s from './HW9.module.css'
 
-function Clock() {
+export  function Clock_v1() {
     const [timerId, setTimerId] = useState<number>()
-    const [date, setDate] = useState<string>(moment().format('ll'))
-    const [time, setTime] = useState<string>(moment().format('LTS'))
+    const [date, setDate] = useState<any>(new Date())
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
@@ -15,9 +14,8 @@ function Clock() {
 
     const start = () => {
         stop()
-        const id: number = window.setInterval(() => {
-            setDate(moment().format('ll'))
-            setTime(moment().format('LTS'))
+        const id: number = +setInterval(() => {
+            setDate(new Date())
         }, 1000)
         setTimerId(id)
     }
@@ -26,11 +24,11 @@ function Clock() {
         setShow(true)
     }
     const onMouseLeave = () => {
-        setTimeout(() => {
-            setShow(false)
-        }, 1000)
-
+        setShow(false)
     }
+
+    const stringTime = date.toLocaleTimeString()
+    const stringDate = date.toLocaleDateString()
 
     return (
         <div>
@@ -39,12 +37,12 @@ function Clock() {
                     onMouseEnter={onMouseEnter}
                     onMouseLeave={onMouseLeave}
                 >
-                    {time}
+                    {stringTime}
                 </div>
 
                 {show && (
                     <div>
-                        {date}
+                        {stringDate}
                     </div>
                 )}</div>
             <div className={s.buttons}><SuperButton onClick={start}>start</SuperButton>
@@ -52,5 +50,3 @@ function Clock() {
         </div>
     )
 }
-
-export default Clock
