@@ -1,5 +1,6 @@
 import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes} from 'react'
 import s from './SuperRange.module.css'
+import {Box, Grid, Slider} from "@material-ui/core";
 
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
@@ -8,6 +9,8 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 // (чтоб не писать value: string, onChange: ...; они уже все описаны в DefaultInputPropsType)
 type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
     onChangeRange?: (value: number) => void
+    values: number[]
+    setValues: (value: number[]) => void
 };
 
 const SuperRange: React.FC<SuperRangePropsType> = (
@@ -15,28 +18,31 @@ const SuperRange: React.FC<SuperRangePropsType> = (
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
         onChange, onChangeRange,
         className,
-
+        setValues,
+        values,
         ...restProps// все остальные пропсы попадут в объект restProps
     }
 ) => {
-    const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange && onChange(e) // сохраняем старую функциональность
 
-        onChangeRange && onChangeRange(+e.currentTarget.value)
+    const onChangeCallback = (event: any, newValue: number | number[]) => {
+
+        if (typeof newValue === "number") {
+            setValues([newValue, values[1]])
+        }
     }
 
     const finalRangeClassName = `${s.range} ${className ? className : ''}`
 
     return (
-        <>
-            <input
-                type={'range'}
-                onChange={onChangeCallback}
-                className={finalRangeClassName}
-
-                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-            />
-        </>
+        <div className={s.range}>
+            <Box sx={{width: 300}}>
+                <Slider value={values[0]}
+                        onChange={onChangeCallback}
+                        aria-label="Default"
+                        valueLabelDisplay="auto"
+                        color="secondary"/>
+            </Box>
+        </div>
     )
 }
 

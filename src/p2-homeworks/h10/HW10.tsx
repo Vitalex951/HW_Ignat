@@ -37,10 +37,7 @@ const loading = useSelector<AppStoreType, boolean>(state => state.loading)
                     )
                 }
             </div>
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<Alternative/>*/}
-            <hr/>
+
         </div>
     )
 }
