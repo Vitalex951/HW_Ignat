@@ -14,9 +14,7 @@ export function Junior() {
             <HW9/>
             <HW7/>
             <HW8/>
-            <Provider store={store}>
-                <HW10/>
-            </Provider>
+            <HW10/>
             <HW11/>
         </>
     )

@@ -83,3 +83,14 @@
     margin: 2px;
     font-size: 14px;
 }
+ .JS  {
+   background-image: url("../../img/javascript.png");
+}
+.React {
+    background-image: url("../../img/react.jpg");
+}
+
+.Deff {
+    background-image: url("../../img/bg_repeat.jpg");
+
+}
