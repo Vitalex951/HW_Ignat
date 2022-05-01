@@ -1,6 +1,6 @@
 export type themeStateType = 'JS' | 'React' | 'Deff'
 
-const initState: themeStateType = "JS"
+const initState: themeStateType = "Deff"
 
 export const themeReducer = (state: themeStateType = initState, action: actionType): themeStateType => {
     switch (action.type) {

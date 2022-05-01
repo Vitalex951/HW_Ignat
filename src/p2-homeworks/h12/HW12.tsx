@@ -2,7 +2,6 @@ import React from "react";
 import s from "./HW12.module.css";
 import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../h10/bll/store";
-import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
 import {changeThemeJS} from "./bll/themeReducer";
 import SuperRadio from "../h7/common/c6-SuperRadio/SuperRadio";
 
@@ -13,23 +12,24 @@ function HW12() {
    const onChangeHandler = (e: any) => {
        dispatch(changeThemeJS(e))
    }
-    console.log(theme)
     return (
         <>
+            <hr/>
             <div className='containerheader'>
                 <h1>
-                    Homeworks 11
+                    Homeworks 12
                 </h1>
             </div>
-            <div className={s[theme]}>
+            <div className={s.container}>
 
                 <SuperRadio
                     options={["JS", 'React', 'Deff']}
                     value={theme}
                     onChangeOption={onChangeHandler}
                 />
-                <hr/>
+
             </div>
+            <hr/>
         </>
     );
 }
