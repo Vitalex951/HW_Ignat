@@ -5,7 +5,6 @@ import s from './HW13.module.css'
 export const HW13 = () => {
     return (
         <div>
-
             <div className='containerheader'>
                 <h1>
                     Homeworks 13

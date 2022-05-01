@@ -5,9 +5,9 @@ import {HW13} from "../../h13/HW13";
 
 export function Junior_plus() {
     return (
-            <div className='containerJunPlus'>
-               <HW12/>
-               <HW13/>
-            </div>
+        <div className='containerJunPlus'>
+            <HW12/>
+            <HW13/>
+        </div>
     )
 }
